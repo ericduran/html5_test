@@ -1,0 +1,6 @@
+; $Id: $
+name = html5 Test
+description = Test all html5 forms elements in Drupal
+core = 7.x
+dependencies[] = elements
+files[] = html5_test.module

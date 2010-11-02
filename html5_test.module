@@ -1,0 +1,55 @@
+<?php
+
+function html5_test_menu() {
+  $items['html5'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => 'd7 html5 test',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('html5_test_form'),
+    'access arguments' => array('access content'), 
+  );
+  
+  return $items;
+}
+
+function html5_test_form() {
+  
+  $form = array();
+  
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'html5_test') . '/html5.css',
+  );
+
+  $form['serchtext'] = array(
+    '#type' => 'searchfield',
+    '#title' => 'This is a search field',
+    '#placeholder' => 'Search this site',
+  );
+  
+  $form['emailfield'] = array(
+    '#type' => 'emailfield',
+    '#title' => 'This is an email field',
+  );
+  
+  $form['numberfield'] = array(
+    '#type' => 'numberfield',
+    '#title' => 'This is an number field',
+  );
+  
+  $form['rangefield'] = array(
+    '#type' => 'rangefield',
+    '#title' => 'This is an range field',
+  );
+  
+  $form['telfield'] = array(
+    '#type' => 'telfield',
+    '#title' => 'This is an Telephone field',
+  );
+  
+  $form['urlfield'] = array(
+    '#type' => 'urlfield',
+    '#title' => 'This is an url field',
+  );
+  
+  return $form;
+}
